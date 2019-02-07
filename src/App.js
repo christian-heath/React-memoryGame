@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Grid from "./Components/Grid";
-import Timer from "./Components/Timer";
+import GameControl from "./Components/GameControl";
 import "./App.css";
 
 class App extends React.Component {
@@ -13,10 +13,7 @@ class App extends React.Component {
       <div>
         <h1 className="header">Memory Game</h1>
         <Grid />
-        <div className="flex-container">
-          <button className="btn btn-success">Click here to start!</button>
-          <Timer />
-        </div>
+        <GameControl buttonClicked={false} beginGame={false} />
       </div>
     );
   }
