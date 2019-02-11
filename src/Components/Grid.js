@@ -5,6 +5,7 @@ class Grid extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.orderedArray = [];
   }
   shuffle(array) {
     var currentIndex = array.length,
@@ -22,23 +23,28 @@ class Grid extends Component {
     return array;
   }
   orderedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  randomArray = shuffle(orderedArray);
+  randomArray = this.shuffle(this.orderedArray);
 
   render() {
+    let className = "box ";
+    for (var i = 0; i < this.randomArray.length / 2; i++) {
+      className += "random " + this.randomArray[i];
+    }
+
     return (
       <div className="grid">
-        <div className="1 box random" />
-        <div className="2 box random" />
-        <div className="3 box random" />
-        <div className="4 box random" />
-        <div className="5 box random" />
-        <div className="6 box random" />
-        <div className="7 box random" />
-        <div className="8 box random" />
-        <div className="9 box random" />
-        <div className="10 box random" />
-        <div className="11 box random" />
-        <div className="12 box random" />
+        <div className={className} />
+        <div className={className} />
+        <div className={className} />
+        <div className={className} />
+        <div className="5 box" />
+        <div className="6 box " />
+        <div className="7 box " />
+        <div className="8 box " />
+        <div className="9 box " />
+        <div className="10 box " />
+        <div className="11 box" />
+        <div className="12 box " />
       </div>
     );
   }
