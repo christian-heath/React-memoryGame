@@ -22,29 +22,46 @@ class Grid extends Component {
     }
     return array;
   }
-  orderedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  orderedArray = [
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+    "eleven",
+    "twelve"
+  ];
   randomArray = this.shuffle(this.orderedArray);
+
+  randomizeClass() {
+    let className = "box " + this.randomArray[this.randomArray.length - 1];
+    this.randomArray.pop();
+    return className;
+  }
 
   render() {
     let className = "box ";
-    for (var i = 0; i < this.randomArray.length / 2; i++) {
-      className += "random " + this.randomArray[i];
-    }
+    className += this.randomArray[0];
 
     return (
       <div className="grid">
-        <div className={className} />
-        <div className={className} />
-        <div className={className} />
-        <div className={className} />
-        <div className="5 box" />
-        <div className="6 box " />
-        <div className="7 box " />
-        <div className="8 box " />
-        <div className="9 box " />
-        <div className="10 box " />
-        <div className="11 box" />
-        <div className="12 box " />
+        <div className={this.randomizeClass()} />
+        <div className={this.randomizeClass()} />
+        <div className={this.randomizeClass()} />
+        <div className={this.randomizeClass()} />
+        <div className={this.randomizeClass()} />
+        <div className={this.randomizeClass()} />
+        <div className={this.randomizeClass()} />
+        <div className={this.randomizeClass()} />
+        <div className={this.randomizeClass()} />
+        <div className={this.randomizeClass()} />
+        <div className={this.randomizeClass()} />
+        <div className={this.randomizeClass()} />
       </div>
     );
   }

@@ -9,7 +9,8 @@ class Timer extends Component {
     this.tick = this.tick;
     this.state = {
       time: 3,
-      hidden: false
+      hidden: false,
+      startGame: false
     };
   }
   componentDidMount() {
@@ -19,6 +20,7 @@ class Timer extends Component {
   componentWillUnmount() {
     clearInterval(this.timerID);
     this.setState({ hidden: true });
+    this.setState({ startGame: true });
   }
 
   tick() {

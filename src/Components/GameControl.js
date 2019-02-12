@@ -15,10 +15,13 @@ class GameControl extends React.Component {
     const buttonClicked = this.state.buttonClicked;
     let display;
     if (buttonClicked) {
-      display = <Timer />;
-    }
-    else {
-      display = <button onClick={this.showCountdown} className="btn btn-success">Click here to start!</button>
+      display = <Timer startGame={false} />;
+    } else {
+      display = (
+        <button onClick={this.showCountdown} className="btn btn-success">
+          Click here to start!
+        </button>
+      );
     }
     return <div className="flex-container">{display}</div>;
   }
